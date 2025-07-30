@@ -1,12 +1,42 @@
-import Image from "next/image";
+import React from "react";
 import "./globals.css";
+import image from "./images/sample.png";
 
 export default function Home() {
   return (
-    <div className="card">
-      <main>
-        <h1 style={{ color: "black", fontSize: 32 }}>Welcome to my website!</h1>
-      </main>
+    <div>
+      <div className="card">
+        <div>
+          <nav className="headerbar">
+            <div>
+              <a className="">Home</a>
+            </div>
+          </nav>
+        </div>
+        <div className="content">
+          <div>
+            <main>
+              <h1 style={{ color: "black", fontSize: 36 }}>
+                hello, my name is emilie!
+              </h1>
+              <br></br>
+              <h2 style={{ color: "black", fontSize: 25 }}>
+                welcome to my website
+              </h2>
+              <br></br>
+              <p style={{ color: "black", fontSize: 18 }}>
+                junior computer scientist, developer, and artist
+              </p>
+            </main>
+          </div>
+          <div>
+            <img src="sample.png" alt="Sample Image" width={300} height={300} />
+          </div>
+        </div>
+      </div>
+      <footer className="text-white p-10 text-center">
+        Made with 🪼 by Emilie
+      </footer>
     </div>
   );
 }

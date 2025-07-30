@@ -18,14 +18,38 @@
     --foreground: #ededed;
   }
 }
+
+.headerbar {
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+  background-color: gray;
+  color: var(--foreground);
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
 .card {
   height: 550px;
   width: 900px;
   background-color: #ededed;
   border-radius: 8px;
-  padding: min(5em, 10%);
-  
+  border-color: gray;
+  border-width: 1px;
+  box-shadow: 5px 5px 2px gray;
+  /*padding: min(5em, 10%);*/
 }
+
+.content{
+  padding: min(3em, 10%);
+  display: flex;
+  flex-direction: row;
+  border-color: red;
+  border-width: 1px;
+  gap: 100px;
+  flex-wrap: wrap;
+}
+
 body {
   display: flex;
   justify-content: center;
