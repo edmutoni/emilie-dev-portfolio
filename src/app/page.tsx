@@ -69,7 +69,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <footer className="text-white p-10 text-center">
+      <footer className="text-white p-10 text-center" style={{ color: "gray" }}>
         Made with 🪼 by Emilie
       </footer>
     </div>

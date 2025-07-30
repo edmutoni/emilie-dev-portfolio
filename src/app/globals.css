@@ -18,6 +18,48 @@
     --foreground: #ededed;
   }
 }
+@import url(https://fonts.googleapis.com/css?family=Exo:100);
+/* Animations */
+@-webkit-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@-moz-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@-o-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@-webkit-keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+@-moz-keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+@-o-keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+@keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
 
 .headerbar {
   justify-content: space-between;
@@ -46,8 +88,8 @@
   padding-top: min(3em, 10%);
   display: flex;
   flex-direction: row;
-  border-color: red;
-  border-width: 1px;
+  /*border-color: red;
+  border-width: 1px;*/
   gap: 100px;
   flex-wrap: wrap;
 }
@@ -58,8 +100,8 @@
   gap: 40px;
   justify-content: left;
   align-items: center;
-  border-color: blue;
-  border-width: 1px;
+  /*border-color: blue;
+  border-width: 1px;*/
   padding-left: min(3em, 10%);
 }
 
@@ -73,7 +115,9 @@
 
 .resume-position{
   position: relative;
+  top: 20px;
   left: 350px;
+  rotate: 25deg;
 }
 
 
@@ -82,7 +126,21 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: var(--background);
+  /*background: var(--background);*/
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC") repeat 0 0;
+  -webkit-animation: bg-scrolling-reverse 0.92s infinite;
+  /* Safari 4+ */
+  -moz-animation: bg-scrolling-reverse 0.92s infinite;
+  /* Fx 5+ */
+  -o-animation: bg-scrolling-reverse 0.92s infinite;
+  /* Opera 12+ */
+  animation: bg-scrolling-reverse 0.92s infinite;
+  /* IE 10+ */
+  -webkit-animation-timing-function: linear;
+  -moz-animation-timing-function: linear;
+  -o-animation-timing-function: linear;
+  animation-timing-function: linear;
 }
+
