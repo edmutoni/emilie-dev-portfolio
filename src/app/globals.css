@@ -27,6 +27,7 @@
   color: var(--foreground);
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
+  font-weight: bold;
 }
 
 .card {
@@ -36,12 +37,13 @@
   border-radius: 8px;
   border-color: gray;
   border-width: 1px;
-  box-shadow: 5px 5px 2px gray;
-  /*padding: min(5em, 10%);*/
+  box-shadow: 5px 5px 2px rgb(148, 148, 148);
 }
 
 .content{
-  padding: min(3em, 10%);
+  padding-left: min(3em, 10%);
+  padding-right: min(3em, 10%);
+  padding-top: min(3em, 10%);
   display: flex;
   flex-direction: row;
   border-color: red;
@@ -49,6 +51,31 @@
   gap: 100px;
   flex-wrap: wrap;
 }
+
+.buttons-container{
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  justify-content: left;
+  align-items: center;
+  border-color: blue;
+  border-width: 1px;
+  padding-left: min(3em, 10%);
+}
+
+.button-single{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.resume-position{
+  position: relative;
+  left: 350px;
+}
+
 
 body {
   display: flex;
