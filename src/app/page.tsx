@@ -25,6 +25,21 @@ export default function Home() {
   const openContactMe = () => setIsContactMeOpen(true);
   const closeContactMe = () => setIsContactMeOpen(false);
 
+  // state control to determine which overlay to set in front
+
+  const [highestZ, setHighestZ] = useState(1);
+  const [zIndexes, setZIndexes] = useState({
+    about: 1,
+    work: 1,
+    contact: 1,
+  });
+
+  const bringToFront = (key: "about" | "work" | "contact") => {
+    const newZ = highestZ + 1;
+    setZIndexes((prev) => ({ ...prev, [key]: newZ }));
+    setHighestZ(newZ);
+  };
+
   return (
     <div>
       <div className="card">
@@ -64,9 +79,24 @@ export default function Home() {
       <footer className="text-white p-10 text-center" style={{ color: "gray" }}>
         Made with 🪼 by Emilie
       </footer>
-      <AboutMe isOpen={isAboutMeOpen} onClose={closeAboutMe} />
-      <MyWork isOpen={isMyWorkOpen} onClose={closeMyWork} />
-      <ContactMe isOpen={isContactMeOpen} onClose={closeContactMe} />
+      <AboutMe
+        isOpen={isAboutMeOpen}
+        onClose={closeAboutMe}
+        zIndex={zIndexes.about}
+        bringToFront={() => bringToFront("about")}
+      />
+      <MyWork
+        isOpen={isMyWorkOpen}
+        onClose={closeMyWork}
+        zIndex={zIndexes.work}
+        bringToFront={() => bringToFront("work")}
+      />
+      <ContactMe
+        isOpen={isContactMeOpen}
+        onClose={closeContactMe}
+        zIndex={zIndexes.contact}
+        bringToFront={() => bringToFront("contact")}
+      />
     </div>
   );
 }

@@ -6,9 +6,16 @@ import "./overlay.css";
 interface OverlayProps {
   isOpen: boolean; // boolean to control visibility of the overlay
   onClose: () => void; // function to close overlay
+  zIndex: number;
+  bringToFront: () => void;
 }
 
-const ContactMe: React.FC<OverlayProps> = ({ isOpen, onClose }) => {
+const ContactMe: React.FC<OverlayProps> = ({
+  isOpen,
+  onClose,
+  zIndex,
+  bringToFront,
+}) => {
   // State to determine if the popup is being dragged
   const [isDragging, setIsDragging] = useState(false);
 
@@ -44,6 +51,7 @@ const ContactMe: React.FC<OverlayProps> = ({ isOpen, onClose }) => {
   // Function to handle the start of a drag event
   const onMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
     e.stopPropagation();
+    bringToFront();
     setIsDragging(true);
     startPos.current = { x: e.clientX - position.x, y: e.clientY - position.y };
   };
@@ -71,7 +79,11 @@ const ContactMe: React.FC<OverlayProps> = ({ isOpen, onClose }) => {
       className="overlay"
       ref={popupRef}
       onClick={(e) => e.stopPropagation()}
-      style={{ transform: `translate(${position.x}px, ${position.y}px)` }}
+      onMouseDown={bringToFront}
+      style={{
+        transform: `translate(${position.x}px, ${position.y}px)`,
+        zIndex: zIndex,
+      }}
     >
       <div className="overlay-header" onMouseDown={onMouseDown}>
         <div>
