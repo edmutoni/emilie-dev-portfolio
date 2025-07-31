@@ -5,9 +5,15 @@ import { useState } from "react";
 
 interface NavButtonsProps {
   openAboutMe: () => void; // function to open About Me overlay
+  openMyWork: () => void;
+  openContactMe: () => void;
 }
 
-export default function NavButtons({ openAboutMe }: NavButtonsProps) {
+export default function NavButtons({
+  openAboutMe,
+  openMyWork,
+  openContactMe,
+}: NavButtonsProps) {
   return (
     <div>
       <div className="buttons-container">
@@ -30,7 +36,16 @@ export default function NavButtons({ openAboutMe }: NavButtonsProps) {
         </div>
         <div className="button-single">
           <div>
-            <img src="star.png" alt="my work" width={75} height={75} />
+            <img
+              src="star.png"
+              alt="my work"
+              width={75}
+              height={75}
+              onClick={() => {
+                console.log("clicked my work");
+                openMyWork();
+              }}
+            />
           </div>
           <div>
             <p style={{ color: "black", fontSize: 18 }}>my work</p>
@@ -38,7 +53,16 @@ export default function NavButtons({ openAboutMe }: NavButtonsProps) {
         </div>
         <div className="button-single">
           <div>
-            <img src="star.png" alt="contact me" width={75} height={75} />
+            <img
+              src="star.png"
+              alt="contact me"
+              width={75}
+              height={75}
+              onClick={() => {
+                console.log("clicked contact me");
+                openContactMe();
+              }}
+            />
           </div>
           <div>
             <p style={{ color: "black", fontSize: 18 }}>contact me</p>
