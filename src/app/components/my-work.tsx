@@ -83,6 +83,8 @@ const MyWork: React.FC<OverlayProps> = ({
       style={{
         transform: `translate(${position.x}px, ${position.y}px)`,
         zIndex: zIndex,
+        top: "10%",
+        left: "10%",
       }}
     >
       <div className="overlay-header" onMouseDown={onMouseDown}>

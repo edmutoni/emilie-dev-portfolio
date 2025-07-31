@@ -83,6 +83,8 @@ const ContactMe: React.FC<OverlayProps> = ({
       style={{
         transform: `translate(${position.x}px, ${position.y}px)`,
         zIndex: zIndex,
+        top: "30%",
+        left: "50%",
       }}
     >
       <div className="overlay-header" onMouseDown={onMouseDown}>
