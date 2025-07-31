@@ -19,12 +19,9 @@ const ContactMe: React.FC<OverlayProps> = ({
   // State to determine if the popup is being dragged
   const [isDragging, setIsDragging] = useState(false);
 
-  // State to keep track of the popup's position
-  const [position, setPosition] = useState<{ x: number; y: number }>({
-    x: window.innerWidth * 0.5,
-    y: window.innerHeight * 0.4,
-  });
-
+  const [position, setPosition] = useState<{ x: number; y: number } | null>(
+    null
+  );
   // Ref to store the initial mouse position when dragging starts
   const startPos = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
 
@@ -64,7 +61,12 @@ const ContactMe: React.FC<OverlayProps> = ({
     e.stopPropagation();
     bringToFront();
     setIsDragging(true);
-    startPos.current = { x: e.clientX - position.x, y: e.clientY - position.y };
+    if (position) {
+      startPos.current = {
+        x: e.clientX - position.x,
+        y: e.clientY - position.y,
+      };
+    }
   };
 
   // Effect to add and clean up event listeners for dragging
@@ -77,17 +79,16 @@ const ContactMe: React.FC<OverlayProps> = ({
     };
   }, [onMouseMove]);
 
-  // Reset position when the popup is closed
   useEffect(() => {
-    if (isOpen) {
+    if (isOpen && position === null) {
       setPosition({
         x: window.innerWidth * 0.5,
         y: window.innerHeight * 0.4,
       });
     }
-  }, [isOpen]);
+  }, [isOpen, position]);
 
-  if (!isOpen) return null;
+  if (!isOpen || position === null) return null;
   return (
     <div
       className="overlay"
