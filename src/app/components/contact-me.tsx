@@ -21,8 +21,8 @@ const ContactMe: React.FC<OverlayProps> = ({
 
   // State to keep track of the popup's position
   const [position, setPosition] = useState<{ x: number; y: number }>({
-    x: 0,
-    y: 0,
+    x: window.innerWidth * 0.5,
+    y: window.innerHeight * 0.4,
   });
 
   // Ref to store the initial mouse position when dragging starts
@@ -34,11 +34,22 @@ const ContactMe: React.FC<OverlayProps> = ({
   // Function to handle mouse movement while dragging
   const onMouseMove = useCallback(
     (e: MouseEvent) => {
-      if (!isDragging) return;
-      setPosition({
-        x: e.clientX - startPos.current.x,
-        y: e.clientY - startPos.current.y,
-      });
+      if (!isDragging || !popupRef.current) return;
+
+      const overlayRect = popupRef.current.getBoundingClientRect();
+      const overlayWidth = overlayRect.width;
+      const overlayHeight = overlayRect.height;
+
+      const newX = e.clientX - startPos.current.x;
+      const newY = e.clientY - startPos.current.y;
+
+      const maxX = window.innerWidth - overlayWidth;
+      const maxY = window.innerHeight - overlayHeight;
+
+      const clampedX = Math.max(0, Math.min(newX, maxX));
+      const clampedY = Math.max(0, Math.min(newY, maxY));
+
+      setPosition({ x: clampedX, y: clampedY });
     },
     [isDragging]
   );
@@ -68,8 +79,11 @@ const ContactMe: React.FC<OverlayProps> = ({
 
   // Reset position when the popup is closed
   useEffect(() => {
-    if (!isOpen) {
-      setPosition({ x: 0, y: 0 });
+    if (isOpen) {
+      setPosition({
+        x: window.innerWidth * 0.5,
+        y: window.innerHeight * 0.4,
+      });
     }
   }, [isOpen]);
 
@@ -81,10 +95,10 @@ const ContactMe: React.FC<OverlayProps> = ({
       onClick={(e) => e.stopPropagation()}
       onMouseDown={bringToFront}
       style={{
-        transform: `translate(${position.x}px, ${position.y}px)`,
+        left: `${position.x}px`,
+        top: `${position.y}px`,
         zIndex: zIndex,
-        top: "30%",
-        left: "50%",
+        position: "fixed",
       }}
     >
       <div className="overlay-header" onMouseDown={onMouseDown}>
