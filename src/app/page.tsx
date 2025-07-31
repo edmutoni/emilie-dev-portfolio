@@ -1,9 +1,17 @@
+"use client";
 import React from "react";
 import "./globals.css";
-import image from "./images/sample.png";
-import { NavButton } from "./components/button";
+import NavButtons from "./components/nav-buttons";
+import AboutMe from "./components/about-me";
+import { useState } from "react";
+
+//render the sub pages in here based on triggers sent out by the nav button component
 
 export default function Home() {
+  const [isAboutMeOpen, setIsAboutMeOpen] = useState(false);
+  const openAboutMe = () => setIsAboutMeOpen(true);
+  const closeAboutMe = () => setIsAboutMeOpen(false);
+
   return (
     <div>
       <div className="card">
@@ -34,44 +42,12 @@ export default function Home() {
             <img src="sample.png" alt="Sample Image" width={300} height={300} />
           </div>
         </div>
-        <div className="buttons-container">
-          <div className="button-single">
-            <div>
-              <img src="star.png" alt="about me" width={75} height={75} />
-            </div>
-            <div>
-              <p style={{ color: "black", fontSize: 18 }}>about me</p>
-            </div>
-          </div>
-          <div className="button-single">
-            <div>
-              <img src="star.png" alt="my work" width={75} height={75} />
-            </div>
-            <div>
-              <p style={{ color: "black", fontSize: 18 }}>my work</p>
-            </div>
-          </div>
-          <div className="button-single">
-            <div>
-              <img src="star.png" alt="contact me" width={75} height={75} />
-            </div>
-            <div>
-              <p style={{ color: "black", fontSize: 18 }}>contact me</p>
-            </div>
-          </div>
-          <div className="button-single">
-            <div className="resume-position">
-              <img src="star.png" alt="my resume" width={75} height={75} />
-              <div>
-                <p style={{ color: "black", fontSize: 15 }}>my resume</p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <NavButtons openAboutMe={openAboutMe} />
       </div>
       <footer className="text-white p-10 text-center" style={{ color: "gray" }}>
         Made with 🪼 by Emilie
       </footer>
+      <AboutMe isOpen={isAboutMeOpen} onClose={closeAboutMe} />
     </div>
   );
 }
