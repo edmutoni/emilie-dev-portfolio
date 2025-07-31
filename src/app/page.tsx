@@ -12,17 +12,26 @@ import ContactMe from "./components/contact-me";
 export default function Home() {
   // state control for about me overlay
   const [isAboutMeOpen, setIsAboutMeOpen] = useState(false);
-  const openAboutMe = () => setIsAboutMeOpen(true);
+  const openAboutMe = () => {
+    setIsAboutMeOpen(true);
+    bringToFront("about");
+  };
   const closeAboutMe = () => setIsAboutMeOpen(false);
 
   // state control for my work overlay
   const [isMyWorkOpen, setIsMyWorkOpen] = useState(false);
-  const openMyWork = () => setIsMyWorkOpen(true);
+  const openMyWork = () => {
+    setIsMyWorkOpen(true);
+    bringToFront("work");
+  };
   const closeMyWork = () => setIsMyWorkOpen(false);
 
   // state control for contact me overlay
   const [isContactMeOpen, setIsContactMeOpen] = useState(false);
-  const openContactMe = () => setIsContactMeOpen(true);
+  const openContactMe = () => {
+    setIsContactMeOpen(true);
+    bringToFront("contact");
+  };
   const closeContactMe = () => setIsContactMeOpen(false);
 
   // state control to determine which overlay to set in front
