@@ -2,6 +2,7 @@
 import React from "react";
 import { useState } from "react";
 import "./globals.css";
+import * as motion from "motion/react-client";
 import NavButtons from "./components/nav-buttons";
 import AboutMe from "./components/about-me";
 import MyWork from "./components/my-work";
@@ -55,7 +56,7 @@ export default function Home() {
         <div>
           <nav className="headerbar">
             <div>
-              <a className="">Home</a>
+              <a>Home</a>
             </div>
           </nav>
         </div>
@@ -85,7 +86,7 @@ export default function Home() {
           openContactMe={openContactMe}
         />
       </div>
-      <footer className="text-white p-10 text-center" style={{ color: "gray" }}>
+      <footer className="p-10 text-center" style={{ color: "gray" }}>
         Made with 🪼 by Emilie
       </footer>
       <AboutMe

@@ -1,5 +1,7 @@
 import { ReactNode, useCallback, useEffect, useRef, useState } from "react";
 import { Columns, X } from "lucide-react";
+import * as motion from "motion/react-client";
+import { Star } from "lucide-react";
 import "../globals.css";
 import "./overlay.css";
 
@@ -114,7 +116,7 @@ const AboutMe: React.FC<OverlayProps> = ({
           </button>
         </div>
       </div>
-      <div className="overlay-col">
+      <div className="overlay-col" style={{ gap: 60 }}>
         <div style={{ display: "flex", flexDirection: "column" }}>
           <h1>
             <span style={{ color: "black", fontSize: 36 }}>
@@ -149,21 +151,21 @@ const AboutMe: React.FC<OverlayProps> = ({
             a little bit about me
           </h1>
           <ul>
-            <li style={{ color: "black", fontSize: 14 }}>
+            <li style={{ color: "black", fontSize: 16 }}>
               • Currently pursuing a Computer Science BS and Information and
               Library Sciences BS (Interactive media concentration).
             </li>
-            <li style={{ color: "black", fontSize: 14 }}>
+            <li style={{ color: "black", fontSize: 16 }}>
               • As a creative in tech, I am drawn to working in the intersection
               of development and design ~
               <ul style={{ paddingLeft: 15 }}>
-                <li style={{ color: "black", fontSize: 14 }}>
+                <li style={{ color: "black", fontSize: 16 }}>
                   • Designing and developing video games
                 </li>
-                <li style={{ color: "black", fontSize: 14 }}>
+                <li style={{ color: "black", fontSize: 16 }}>
                   • Front-end web development and design and wire framing
                 </li>
-                <li style={{ color: "black", fontSize: 14 }}>
+                <li style={{ color: "black", fontSize: 16 }}>
                   • 3D modeling, rigging, and animation
                 </li>
               </ul>
@@ -178,7 +180,7 @@ const AboutMe: React.FC<OverlayProps> = ({
         <h1 style={{ color: "black", fontSize: 20 }}>other interests</h1>
         <ul>
           <li>
-            <span style={{ color: "black", fontSize: 14 }}>
+            <span style={{ color: "black", fontSize: 16 }}>
               • Playing video games
             </span>
             <span style={{ color: "black", fontSize: 10 }}>
@@ -186,27 +188,32 @@ const AboutMe: React.FC<OverlayProps> = ({
               especially the Legend of Zelda series
             </span>
           </li>
-          <li style={{ color: "black", fontSize: 14 }}>
+          <li style={{ color: "black", fontSize: 16 }}>
             • Running and listening to podcasts
           </li>
-          <li style={{ color: "black", fontSize: 14 }}>
+          <li style={{ color: "black", fontSize: 16 }}>
             • Being involved in my comp-sci community!
             <ul style={{ paddingLeft: 15 }}>
-              <li style={{ color: "black", fontSize: 14 }}>
+              <li style={{ color: "black", fontSize: 16 }}>
                 • Hackathon director to create spaces for women and gender
                 minorities in tech (check out Pearl Hacks)
               </li>
-              <li style={{ color: "black", fontSize: 14 }}>
+              <li style={{ color: "black", fontSize: 16 }}>
                 • Programming events for CS students to foster inclusivity and
                 student wellness
               </li>
-              <li style={{ color: "black", fontSize: 14 }}>
+              <li style={{ color: "black", fontSize: 16 }}>
                 • Collaborate to develop video games for VR with UNC's AR&VR
                 club
               </li>
             </ul>
           </li>
         </ul>
+        <br></br>
+        <footer style={{ alignSelf: "center" }}>
+          <Star color="black" strokeWidth={2} />
+        </footer>
+        <br></br>
       </div>
     </div>
   );

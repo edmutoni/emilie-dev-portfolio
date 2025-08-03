@@ -1,5 +1,6 @@
 import { ReactNode, useCallback, useEffect, useRef, useState } from "react";
 import { X } from "lucide-react";
+import Button from "react-bootstrap/Button";
 import "../globals.css";
 import "./overlay.css";
 
@@ -113,10 +114,80 @@ const MyWork: React.FC<OverlayProps> = ({
           </button>
         </div>
       </div>
-      <div className="overlay-content">
-        <p style={{ color: "black", fontSize: 18 }}>
-          This page will showcase my portfolio work.
-        </p>
+      <div className="overlay-row">
+        <div
+          className="overlay-col"
+          style={{
+            borderColor: "green",
+            borderWidth: 1,
+            gap: 10,
+            alignItems: "stretch",
+            padding: 0,
+          }}
+        >
+          <div
+            className="overlay-row"
+            style={{ borderColor: "blue", borderWidth: 1, flex: 1, padding: 0 }}
+          >
+            <div>
+              <h1 style={{ color: "black", fontSize: 20 }}>tools</h1>
+            </div>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                gap: 10,
+                flexWrap: "wrap",
+              }}
+            >
+              <Button variant="secondary">figma</Button>
+              <Button variant="secondary">unity</Button>
+              <Button variant="secondary">onshape</Button>
+              <Button variant="secondary">mudbox</Button>
+              <Button variant="secondary">maya</Button>
+              <Button variant="secondary">adobe premier pro</Button>
+              <Button variant="secondary">adobe after effects</Button>
+              <Button variant="secondary">next js</Button>
+              <Button variant="secondary">bootstrap</Button>
+              <Button variant="secondary">gamemaker</Button>
+              <Button variant="secondary">github</Button>
+            </div>
+          </div>
+          <div
+            className="overlay-row"
+            style={{
+              borderColor: "red",
+              borderWidth: 1,
+              flex: 1,
+              padding: 0,
+            }}
+          >
+            <h1 style={{ color: "black", fontSize: 20 }}>languages</h1>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                gap: 10,
+                flexWrap: "wrap",
+              }}
+            >
+              <Button variant="secondary">python</Button>
+              <Button variant="secondary">java</Button>
+              <Button variant="secondary">C</Button>
+              <Button variant="secondary">C#</Button>
+              <Button variant="secondary">C++</Button>
+              <Button variant="secondary">CSS</Button>
+              <Button variant="secondary">HTML</Button>
+              <Button variant="secondary">javascript</Button>
+              <Button variant="secondary">typescript</Button>
+            </div>
+          </div>
+        </div>
+        <br></br>
+        <div>
+          <h1 style={{ color: "black", fontSize: 20 }}>current work</h1>
+          <p style={{ color: "black", fontSize: 16 }}>hello there</p>
+        </div>
       </div>
     </div>
   );
