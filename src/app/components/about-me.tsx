@@ -1,5 +1,5 @@
 import { ReactNode, useCallback, useEffect, useRef, useState } from "react";
-import { X } from "lucide-react";
+import { Columns, X } from "lucide-react";
 import "../globals.css";
 import "./overlay.css";
 
@@ -114,10 +114,99 @@ const AboutMe: React.FC<OverlayProps> = ({
           </button>
         </div>
       </div>
-      <div className="overlay-content">
-        <p style={{ color: "black", fontSize: 18 }}>
-          This is the about me page.
-        </p>
+      <div className="overlay-col">
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          <h1>
+            <span style={{ color: "black", fontSize: 36 }}>
+              Emilie Mutoniwabo
+            </span>
+            <span style={{ color: "black", fontSize: 16 }}> they/them</span>
+          </h1>
+          <div>
+            <h2 style={{ color: "blue", fontSize: 13 }}>
+              third year student at the university of north carolina at chapel
+              hill
+            </h2>
+          </div>
+        </div>
+        <div className="buttons-container">
+          <div className="button-single" style={{ gap: 10 }}>
+            <div>
+              <img src="star.png" alt="linkedin" width={20} height={20} />
+            </div>
+            <div style={{ color: "black", fontSize: 14 }}>linkedin</div>
+          </div>
+          <div className="button-single" style={{ gap: 10 }}>
+            <img src="star.png" alt="github" width={20} height={20} />
+            <div style={{ color: "black", fontSize: 14 }}>github</div>
+          </div>
+        </div>
+      </div>
+      <hr className="solid" />
+      <div className="overlay-col">
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          <h1 style={{ color: "black", fontSize: 20 }}>
+            a little bit about me
+          </h1>
+          <ul>
+            <li style={{ color: "black", fontSize: 14 }}>
+              • Currently pursuing a Computer Science BS and Information and
+              Library Sciences BS (Interactive media concentration).
+            </li>
+            <li style={{ color: "black", fontSize: 14 }}>
+              • As a creative in tech, I am drawn to working in the intersection
+              of development and design ~
+              <ul style={{ paddingLeft: 15 }}>
+                <li style={{ color: "black", fontSize: 14 }}>
+                  • Designing and developing video games
+                </li>
+                <li style={{ color: "black", fontSize: 14 }}>
+                  • Front-end web development and design and wire framing
+                </li>
+                <li style={{ color: "black", fontSize: 14 }}>
+                  • 3D modeling, rigging, and animation
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <img src="web-headshot.png" alt="headshot" width={500} height={500} />
+        </div>
+      </div>
+      <div className="overlay-row">
+        <h1 style={{ color: "black", fontSize: 20 }}>other interests</h1>
+        <ul>
+          <li>
+            <span style={{ color: "black", fontSize: 14 }}>
+              • Playing video games
+            </span>
+            <span style={{ color: "black", fontSize: 10 }}>
+              {" "}
+              especially the Legend of Zelda series
+            </span>
+          </li>
+          <li style={{ color: "black", fontSize: 14 }}>
+            • Running and listening to podcasts
+          </li>
+          <li style={{ color: "black", fontSize: 14 }}>
+            • Being involved in my comp-sci community!
+            <ul style={{ paddingLeft: 15 }}>
+              <li style={{ color: "black", fontSize: 14 }}>
+                • Hackathon director to create spaces for women and gender
+                minorities in tech (check out Pearl Hacks)
+              </li>
+              <li style={{ color: "black", fontSize: 14 }}>
+                • Programming events for CS students to foster inclusivity and
+                student wellness
+              </li>
+              <li style={{ color: "black", fontSize: 14 }}>
+                • Collaborate to develop video games for VR with UNC's AR&VR
+                club
+              </li>
+            </ul>
+          </li>
+        </ul>
       </div>
     </div>
   );
