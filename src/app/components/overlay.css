@@ -36,6 +36,11 @@
     gap: 40px 
 }
 
+.custom-divider {
+  border-bottom: 2px solid #a20606;
+}
+
+
 .overlay-row {
     padding-left: min(1em, 10%);
     padding-right: min(1em, 10%);
@@ -51,3 +56,24 @@ hr.solid {
     border-top: 1px solid #c0c0c0
 }
 
+hr.dashed {
+  border-top: 3px dashed #7f7f7f;
+}
+
+.carousel-container {
+    width: 500px;
+    height: 250px;
+    display: flex;
+    gap: 20px;
+    padding-left: min(2em, 10%);
+    padding-right: min(2em, 10%);
+    background-color: rgb(148, 148, 148);
+    border-radius: 13px;
+    box-shadow: 0px 5px 2px rgb(177, 177, 177);
+    overflow-y: auto;
+    
+}
+
+.slick-slide > div {
+    margin: 0 10px;
+}

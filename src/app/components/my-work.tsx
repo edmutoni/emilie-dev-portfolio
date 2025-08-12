@@ -3,6 +3,7 @@ import { X } from "lucide-react";
 import Button from "react-bootstrap/Button";
 import "../globals.css";
 import "./overlay.css";
+import WorkCarousel from "./work-carousel";
 
 interface OverlayProps {
   isOpen: boolean; // boolean to control visibility of the overlay
@@ -118,17 +119,12 @@ const MyWork: React.FC<OverlayProps> = ({
         <div
           className="overlay-col"
           style={{
-            borderColor: "green",
-            borderWidth: 1,
             gap: 10,
             alignItems: "stretch",
             padding: 0,
           }}
         >
-          <div
-            className="overlay-row"
-            style={{ borderColor: "blue", borderWidth: 1, flex: 1, padding: 0 }}
-          >
+          <div className="overlay-row" style={{ flex: 1, padding: 0 }}>
             <div>
               <h1 style={{ color: "black", fontSize: 20 }}>tools</h1>
             </div>
@@ -156,8 +152,6 @@ const MyWork: React.FC<OverlayProps> = ({
           <div
             className="overlay-row"
             style={{
-              borderColor: "red",
-              borderWidth: 1,
               flex: 1,
               padding: 0,
             }}
@@ -184,9 +178,27 @@ const MyWork: React.FC<OverlayProps> = ({
           </div>
         </div>
         <br></br>
+        <h1 style={{ color: "black", fontSize: 20 }}>current work</h1>
+        <div className="place-self-center">
+          <WorkCarousel />
+        </div>
+        <h1 style={{ color: "black", fontSize: 20 }}>
+          things i want to work on in the future
+        </h1>
         <div>
-          <h1 style={{ color: "black", fontSize: 20 }}>current work</h1>
-          <p style={{ color: "black", fontSize: 16 }}>hello there</p>
+          <ul>
+            <li style={{ color: "black", fontSize: 16 }}>
+              • making fun web-apps and web-exentsions
+            </li>
+            <li style={{ color: "black", fontSize: 16 }}>
+              • stregthening my modeling and animating skills in mudbox and
+              maya.
+            </li>
+            <li style={{ color: "black", fontSize: 16 }}>
+              • learning and making a 2D game in unity. i also want to dabble
+              with unreal engine for more 3D development.
+            </li>
+          </ul>
         </div>
       </div>
     </div>
