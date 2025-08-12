@@ -7,12 +7,14 @@ interface NavButtonsProps {
   openAboutMe: () => void; // function to open About Me overlay
   openMyWork: () => void;
   openContactMe: () => void;
+  openResume: () => void;
 }
 
 export default function NavButtons({
   openAboutMe,
   openMyWork,
   openContactMe,
+  openResume,
 }: NavButtonsProps) {
   return (
     <div>
@@ -70,7 +72,15 @@ export default function NavButtons({
         </div>
         <div className="button-single">
           <div className="resume-position">
-            <img src="star.png" alt="my resume" width={75} height={75} />
+            <img
+              src="star.png"
+              alt="my resume"
+              width={75}
+              height={75}
+              onClick={() => {
+                openResume();
+              }}
+            />
             <div>
               <p style={{ color: "black", fontSize: 15 }}>my resume</p>
             </div>

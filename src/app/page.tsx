@@ -7,6 +7,7 @@ import NavButtons from "./components/nav-buttons";
 import AboutMe from "./components/about-me";
 import MyWork from "./components/my-work";
 import ContactMe from "./components/contact-me";
+import Resume from "./components/resume";
 
 //render the sub pages in here based on triggers sent out by the nav button component
 
@@ -35,6 +36,14 @@ export default function Home() {
   };
   const closeContactMe = () => setIsContactMeOpen(false);
 
+  // state control for resume overlay
+  const [isResumeOpen, setIsResumeOpen] = useState(false);
+  const openResume = () => {
+    setIsResumeOpen(true);
+    bringToFront("contact");
+  };
+  const closeResume = () => setIsResumeOpen(false);
+
   // state control to determine which overlay to set in front
 
   const [highestZ, setHighestZ] = useState(1);
@@ -42,9 +51,10 @@ export default function Home() {
     about: 1,
     work: 1,
     contact: 1,
+    resume: 1,
   });
 
-  const bringToFront = (key: "about" | "work" | "contact") => {
+  const bringToFront = (key: "about" | "work" | "contact" | "resume") => {
     const newZ = highestZ + 1;
     setZIndexes((prev) => ({ ...prev, [key]: newZ }));
     setHighestZ(newZ);
@@ -84,6 +94,7 @@ export default function Home() {
           openAboutMe={openAboutMe}
           openMyWork={openMyWork}
           openContactMe={openContactMe}
+          openResume={openResume}
         />
       </div>
       <footer className="p-10 text-center" style={{ color: "gray" }}>
@@ -107,6 +118,12 @@ export default function Home() {
         zIndex={zIndexes.contact}
         bringToFront={() => bringToFront("contact")}
       />
+      <Resume
+        isOpen={isResumeOpen}
+        onClose={closeResume}
+        zIndex={zIndexes.resume}
+        bringToFront={() => bringToFront("resume")}
+      ></Resume>
     </div>
   );
 }

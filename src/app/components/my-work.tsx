@@ -4,6 +4,7 @@ import Button from "react-bootstrap/Button";
 import "../globals.css";
 import "./overlay.css";
 import WorkCarousel from "./work-carousel";
+import { Star } from "lucide-react";
 
 interface OverlayProps {
   isOpen: boolean; // boolean to control visibility of the overlay
@@ -201,6 +202,11 @@ const MyWork: React.FC<OverlayProps> = ({
           </ul>
         </div>
       </div>
+      <br></br>
+      <footer className="place-self-center">
+        <Star color="black" strokeWidth={2} />
+      </footer>
+      <br></br>
     </div>
   );
 };

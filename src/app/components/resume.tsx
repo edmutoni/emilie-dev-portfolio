@@ -13,7 +13,7 @@ interface OverlayProps {
   bringToFront: () => void;
 }
 
-const ContactMe: React.FC<OverlayProps> = ({
+const Resume: React.FC<OverlayProps> = ({
   isOpen,
   onClose,
   zIndex,
@@ -85,7 +85,7 @@ const ContactMe: React.FC<OverlayProps> = ({
   useEffect(() => {
     if (isOpen && position === null) {
       setPosition({
-        x: window.innerWidth * 0.5,
+        x: window.innerWidth * 0.275,
         y: window.innerHeight * 0.4,
       });
     }
@@ -107,7 +107,7 @@ const ContactMe: React.FC<OverlayProps> = ({
     >
       <div className="overlay-header" onMouseDown={onMouseDown}>
         <div>
-          <a>Contact Me</a>
+          <a>My Resume</a>
         </div>
         <div>
           <button onClick={onClose}>
@@ -116,41 +116,12 @@ const ContactMe: React.FC<OverlayProps> = ({
         </div>
       </div>
       <div className="overlay-content">
-        <br></br>
-        <h3
-          className="place-self-center"
-          style={{ color: "black", fontStyle: "italic" }}
-        >
-          want to work together? have a question?
-        </h3>
-        <div className="bg-animation">
-          <div id="stars"></div>
-          <div id="stars2"></div>
-          <div id="stars3"></div>
-          <div id="stars4"></div>
-        </div>
-        <div className="place-self-center">
-          <p style={{ color: "black" }}>envelope anim will be here</p>
-        </div>
-        <div className="place-self-center">
-          <p>
-            <span style={{ color: "black" }}>send me an email at</span>
-            <span style={{ color: "purple" }}> edmutoniwabo@gmail.com</span>
-          </p>
-        </div>
-        <div className="place-self-center">
-          <a href="mailto:edmutoniwabo@gmail.com">
-            <Button variant="secondary">send me a message!</Button>
-          </a>
-        </div>
-        <br></br>
-        <div className="place-self-center">
-          <p>
-            <span style={{ color: "black" }}>
-              be sure to also connect with me on{" "}
-            </span>
-            <span style={{ color: "blue" }}>linkedin</span>
-          </p>
+        <div className="overlay-row max-height-full">
+          <embed
+            style={{ width: "100%", height: "100%" }}
+            type="application/pdf"
+            src="Mutoniwabo-Emilie-2025-Resume.pdf"
+          />
         </div>
       </div>
       <br></br>
@@ -162,4 +133,4 @@ const ContactMe: React.FC<OverlayProps> = ({
   );
 };
 
-export default ContactMe;
+export default Resume;
