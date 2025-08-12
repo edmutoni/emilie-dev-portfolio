@@ -31,16 +31,7 @@ const work = [
     button: <Button variant="secondary">see protoypes</Button>,
   },
 ];
-
-function CustomSlideEx(props) {
-  const { index, ...otherProps } = props;
-  return (
-    <div {...otherProps}>
-      <h3>{index}</h3>
-    </div>
-  );
-}
-
+//fix button on the slide to make it not look wacky
 function CustomSlide(props){
   const {image, title, desc, button} = props;
   return (

@@ -5,6 +5,7 @@ import "./overlay.css";
 import "./particle_anim.css";
 import Button from "react-bootstrap/Button";
 import { Star } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 
 interface OverlayProps {
   isOpen: boolean; // boolean to control visibility of the overlay
@@ -86,7 +87,7 @@ const Resume: React.FC<OverlayProps> = ({
     if (isOpen && position === null) {
       setPosition({
         x: window.innerWidth * 0.275,
-        y: window.innerHeight * 0.4,
+        y: window.innerHeight * 0.175,
       });
     }
   }, [isOpen, position]);
@@ -103,6 +104,7 @@ const Resume: React.FC<OverlayProps> = ({
         top: `${position.y}px`,
         zIndex: zIndex,
         position: "fixed",
+        height: 600,
       }}
     >
       <div className="overlay-header" onMouseDown={onMouseDown}>
@@ -115,8 +117,23 @@ const Resume: React.FC<OverlayProps> = ({
           </button>
         </div>
       </div>
-      <div className="overlay-content">
-        <div className="overlay-row max-height-full">
+      <div className="overlay-content" style={{ height: 700 }}>
+        <div className="place-self-end">
+          <a
+            className="flex flex-direction-row"
+            href="Mutoniwabo-Emilie-2025-Resume.pdf"
+            target="_blank"
+            style={{ gap: 10, padding: 15 }}
+          >
+            <ExternalLink />
+            <p style={{ color: "black", fontStyle: "italic" }}>
+              {" "}
+              open in new tab
+            </p>
+          </a>
+        </div>
+
+        <div className="overlay-row max-height-full" style={{ height: 600 }}>
           <embed
             style={{ width: "100%", height: "100%" }}
             type="application/pdf"
