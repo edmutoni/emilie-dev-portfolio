@@ -134,12 +134,17 @@ const AboutMe: React.FC<OverlayProps> = ({
         <div className="buttons-container">
           <div className="button-single" style={{ gap: 10 }}>
             <div>
-              <img src="star.png" alt="linkedin" width={20} height={20} />
+              <a href="https://www.linkedin.com/in/emilie-mutoniwabo/">
+                <img src="star.png" alt="linkedin" width={20} height={20} />
+              </a>
             </div>
             <div style={{ color: "black", fontSize: 14 }}>linkedin</div>
           </div>
           <div className="button-single" style={{ gap: 10 }}>
-            <img src="star.png" alt="github" width={20} height={20} />
+            <a href="https://github.com/edmutoni">
+              <img src="star.png" alt="github" width={20} height={20} />
+            </a>
+
             <div style={{ color: "black", fontSize: 14 }}>github</div>
           </div>
         </div>

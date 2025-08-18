@@ -5,6 +5,7 @@ import "./overlay.css";
 import "./particle_anim.css";
 import Button from "react-bootstrap/Button";
 import { Star } from "lucide-react";
+import ClipboardJS from "clipboard";
 
 interface OverlayProps {
   isOpen: boolean; // boolean to control visibility of the overlay
@@ -92,6 +93,7 @@ const ContactMe: React.FC<OverlayProps> = ({
   }, [isOpen, position]);
 
   if (!isOpen || position === null) return null;
+
   return (
     <div
       className="overlay"
@@ -149,7 +151,12 @@ const ContactMe: React.FC<OverlayProps> = ({
             <span style={{ color: "black" }}>
               be sure to also connect with me on{" "}
             </span>
-            <span style={{ color: "blue" }}>linkedin</span>
+            <a
+              href="https://www.linkedin.com/in/emilie-mutoniwabo/"
+              target="_blank"
+            >
+              <span style={{ color: "blue" }}>linkedin</span>
+            </a>
           </p>
         </div>
       </div>

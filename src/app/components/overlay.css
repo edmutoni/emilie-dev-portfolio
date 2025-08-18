@@ -65,13 +65,17 @@ hr.dashed {
     height: 250px;
     display: flex;
     gap: 20px;
-    padding-left: min(2em, 10%);
-    padding-right: min(2em, 10%);
+    padding-left: min(1em, 10%);
+    padding-right: min(1em, 10%);
     background-color: rgb(148, 148, 148);
     border-radius: 13px;
     box-shadow: 0px 5px 2px rgb(177, 177, 177);
     overflow-y: auto;
     
+}
+
+.image-frame {
+    border-radius: 3px;
 }
 
 .slick-slide > div {
