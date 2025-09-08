@@ -1,0 +1,153 @@
+/* NOT IN USE ANYMORE */
+@import "tailwindcss";
+
+.overlay {
+    position: fixed;
+    height: 450px;
+    width: 700px;
+    background-color: #ededed;
+    border-radius: 8px;
+    border-color: gray;
+    border-width: 1px;
+    box-shadow: 5px 5px 2px rgb(148, 148, 148);
+    overflow-y: scroll;
+}
+
+.overlay-header {
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    background-color: gray;
+    color: var(--foreground);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    cursor: grab;
+}
+
+.overlay-col {
+    padding-left: min(1em, 10%);
+    padding-right: min(1em, 10%);
+    padding-top: min(1em, 10%);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px 
+}
+
+.custom-divider {
+  border-bottom: 2px solid #a20606;
+}
+
+.overlay-row {
+    padding-left: min(1em, 10%);
+    padding-right: min(1em, 10%);
+    padding-top: min(1em, 10%);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items:flex-start
+}
+
+hr.solid {
+    border-top: 1px solid #c0c0c0
+}
+
+hr.dashed {
+  border-top: 3px dashed #7f7f7f;
+}
+
+.carousel-container {
+    width: 700px;
+    height: 250px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 20px;
+    background-color: rgb(148, 148, 148);
+    border-radius: 13px;
+    box-shadow: 0px 5px 2px rgb(177, 177, 177);
+    overflow: hidden; /* Changed from overflow-y: auto */
+    
+}
+
+/* Left column for image and tags */
+.carousel-left-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 0; /* Prevents flex item from overflowing */
+}
+
+/* Right column for text content */
+.carousel-right-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10px;
+    min-width: 0; /* Prevents flex item from overflowing */
+    padding-right: 10px; /* Extra padding to prevent cutoff */
+}
+
+/* Image container to control sizing */
+.image-container {
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+/* Make all images fit the width of their container */
+.image-frame {
+    width: 100%;
+    height: auto;
+    max-height: 150px; /* Prevent images from being too tall */
+    object-fit: cover; /* Maintain aspect ratio while filling space */
+    border-radius: 4px;
+    display: block;
+}
+
+/* Styling for tags */
+.tags-text {
+    font-size: 14px;
+    font-style: italic;
+    text-align: center;
+    margin: 0;
+    flex-shrink: 0;
+}
+
+/* Title styling - prevent cutoff */
+.slide-title {
+    font-size: px;
+    font-style: italic;
+    margin: 0 0 10px 0;
+    line-height: 1.2;
+    word-wrap: break-word;
+    hyphens: auto;
+}
+
+/* Description styling */
+.slide-description {
+    font-size: 16px;
+    margin: 0 0 15px 0;
+    line-height: 1.4;
+    flex-grow: 1;
+    word-wrap: break-word;
+}
+
+/* Button container */
+.button-container {
+    align-self: flex-start;
+    flex-shrink: 0;
+}
+
+.slick-slide > div {
+    margin: 10px 10px;
+}

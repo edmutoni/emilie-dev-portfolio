@@ -144,7 +144,7 @@ const MyWork: React.FC<OverlayProps> = ({
               <Button variant="secondary">maya</Button>
               <Button variant="secondary">adobe premier pro</Button>
               <Button variant="secondary">adobe after effects</Button>
-              <Button variant="secondary">next js</Button>
+              <Button variant="secondary">next.js</Button>
               <Button variant="secondary">bootstrap</Button>
               <Button variant="secondary">gamemaker</Button>
               <Button variant="secondary">github</Button>
@@ -183,6 +183,7 @@ const MyWork: React.FC<OverlayProps> = ({
         <div className="place-self-center">
           <WorkCarousel />
         </div>
+        <br></br>
         <h1 style={{ color: "black", fontSize: 20 }}>
           things i want to work on in the future
         </h1>

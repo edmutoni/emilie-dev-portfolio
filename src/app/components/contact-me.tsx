@@ -132,9 +132,6 @@ const ContactMe: React.FC<OverlayProps> = ({
           <div id="stars4"></div>
         </div>
         <div className="place-self-center">
-          <p style={{ color: "black" }}>envelope anim will be here</p>
-        </div>
-        <div className="place-self-center">
           <p>
             <span style={{ color: "black" }}>send me an email at</span>
             <span style={{ color: "purple" }}> edmutoniwabo@gmail.com</span>
