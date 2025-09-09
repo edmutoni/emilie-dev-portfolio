@@ -82,17 +82,36 @@
   box-shadow: 5px 5px 2px rgb(148, 148, 148);
 }
 
+/*
 .content{
   padding-left: min(3em, 10%);
   padding-right: min(3em, 10%);
   padding-top: min(3em, 10%);
   display: flex;
   flex-direction: row;
-  /*border-color: red;
-  border-width: 1px;*/
+
   gap: 100px;
   flex-wrap: wrap;
 }
+  */
+
+.content {
+  padding-left: min(3em, 10%);
+  padding-right: min(3em, 10%);
+  padding-top: min(3em, 10%);
+  padding-bottom: min(3em, 10%);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 100px;
+  flex-wrap: wrap;
+}
+
+.content > * {
+  flex: 1;
+  min-width: 0;
+}
+
 
 .buttons-container{
   display: flex;

@@ -86,9 +86,6 @@ export default function Home() {
               </p>
             </main>
           </div>
-          <div>
-            <img src="sample.png" alt="Sample Image" width={300} height={300} />
-          </div>
         </div>
         <NavButtons
           openAboutMe={openAboutMe}
@@ -127,3 +124,8 @@ export default function Home() {
     </div>
   );
 }
+
+/*<div>
+  <img src="sample.png" alt="Sample Image" width={300} height={300} />
+</div>
+*/

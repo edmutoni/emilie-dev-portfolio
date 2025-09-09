@@ -22,7 +22,7 @@ export default function NavButtons({
         <div className="button-single">
           <div>
             <img
-              src="star.png"
+              src="about_me.png"
               alt="about me"
               width={75}
               height={75}
@@ -39,7 +39,7 @@ export default function NavButtons({
         <div className="button-single">
           <div>
             <img
-              src="star.png"
+              src="my_work.png"
               alt="my work"
               width={75}
               height={75}
@@ -56,7 +56,7 @@ export default function NavButtons({
         <div className="button-single">
           <div>
             <img
-              src="star.png"
+              src="contact_me.png"
               alt="contact me"
               width={75}
               height={75}
@@ -73,7 +73,7 @@ export default function NavButtons({
         <div className="button-single">
           <div className="resume-position">
             <img
-              src="star.png"
+              src="resume.png"
               alt="my resume"
               width={75}
               height={75}
