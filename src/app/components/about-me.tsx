@@ -208,8 +208,8 @@ const AboutMe: React.FC<OverlayProps> = ({
                 student wellness
               </li>
               <li style={{ color: "black", fontSize: 16 }}>
-                • Collaborate to develop video games for VR with UNC's AR&VR
-                club
+                • Collaborate to develop video games for VR with UNC&apos;s
+                AR&VR club
               </li>
             </ul>
           </li>

@@ -74,7 +74,7 @@ export default function Home() {
           <div>
             <main>
               <h1 style={{ color: "black", fontSize: 48 }}>
-                hello, i'm emilie!
+                hello, i&apos;m emilie!
               </h1>
               <br></br>
               <h2 style={{ color: "black", fontSize: 36 }}>
