@@ -72,18 +72,17 @@ export default function NavButtons({
         </div>
         <div className="button-single">
           <div className="resume-position">
-            <img
-              src="resume.png"
-              alt="my resume"
-              width={75}
-              height={75}
-              onClick={() => {
-                openResume();
-              }}
-            />
-            <div>
-              <p style={{ color: "black", fontSize: 15 }}>my resume</p>
-            </div>
+            <a
+              href="resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ cursor: "pointer" }}
+            >
+              <img src="resume.png" alt="my resume" width={75} height={75} />
+              <div>
+                <p style={{ color: "black", fontSize: 15 }}>my resume</p>
+              </div>
+            </a>
           </div>
         </div>
       </div>

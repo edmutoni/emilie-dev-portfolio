@@ -121,7 +121,7 @@ const Resume: React.FC<OverlayProps> = ({
         <div className="place-self-end">
           <a
             className="flex flex-direction-row"
-            href="Mutoniwabo-Emilie-2025-Resume.pdf"
+            href="/Emilie_Mutoniwabo_Resume.pdf"
             target="_blank"
             style={{ gap: 10, padding: 15 }}
           >
@@ -134,10 +134,15 @@ const Resume: React.FC<OverlayProps> = ({
         </div>
 
         <div className="overlay-row max-height-full" style={{ height: 600 }}>
-          <embed
+          {/* <embed
             style={{ width: "100%", height: "100%" }}
             type="application/pdf"
-            src="Mutoniwabo-Emilie-2025-Resume.pdf"
+            src="/Emilie_Mutoniwabo_Resume.pdf"
+          /> */}
+          <iframe
+            style={{ width: "100%", height: "100%", border: "none" }}
+            src="Emilie_Mutoniwabo_Resume.pdf"
+            title="Resume PDF"
           />
         </div>
       </div>
