@@ -156,12 +156,12 @@ const ContactMe: React.FC<OverlayProps> = ({
             </a>
           </p>
         </div>
+        <br></br>
+        <footer className="place-self-center">
+          <Star color="black" strokeWidth={2} />
+        </footer>
+        <br></br>
       </div>
-      <br></br>
-      <footer className="place-self-center">
-        <Star color="black" strokeWidth={2} />
-      </footer>
-      <br></br>
     </div>
   );
 };
