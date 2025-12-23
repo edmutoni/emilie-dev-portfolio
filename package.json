@@ -13,11 +13,11 @@
     "clipboard": "^2.0.11",
     "lucide-react": "^0.535.0",
     "motion": "^12.23.12",
-    "next": "15.4.5",
+    "next": "^15.5.9",
     "react": "19.1.0",
     "react-bootstrap": "^2.10.10",
     "react-dom": "19.1.0",
-    "react-multi-carousel": "^2.8.6",
+    "react-multi-carousel": "^2.8.5",
     "react-slick": "^0.30.3",
     "slick-carousel": "^1.8.1"
   },
