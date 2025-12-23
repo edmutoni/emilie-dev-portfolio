@@ -117,7 +117,7 @@ const ContactMe: React.FC<OverlayProps> = ({
           </button>
         </div>
       </div>
-      <div className="overlay-content">
+      <div className="overlay-row">
         <br></br>
         <h3
           className="place-self-center"
